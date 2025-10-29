@@ -1,4 +1,17 @@
 services:
+    reverse-ports:
+    image: traefik:v3.1
+    command: 
+     - "--api.insecure=true" # Permettre l'accès aux Dashboard de Traefik
+     - "--providers.docker"
+     - "--providers.docker.exposedByDefault=false"  
+        # Désactive l'exposition automatique des conteneur à Traefik
+    ports:
+      - "80:80"
+      - "8080:8080" # traefik dashboard
+    volumes:
+    # important car ça permet à traefik de monitorer les containers docker
+      - /var/run/docker.sock:/var/run/docker.sock
 
   api:
     build: 
