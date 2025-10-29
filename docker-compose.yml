@@ -1,5 +1,6 @@
 services:
-    reverse-ports:
+
+  reverse-ports:
     image: traefik:v3.1
     command: 
      - "--api.insecure=true" # Permettre l'accès aux Dashboard de Traefik
@@ -12,7 +13,7 @@ services:
     volumes:
     # important car ça permet à traefik de monitorer les containers docker
       - /var/run/docker.sock:/var/run/docker.sock
-
+ 
   api:
     build: 
       context: ./api
