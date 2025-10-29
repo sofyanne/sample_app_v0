@@ -30,7 +30,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=0
       - PYTHONPATH=/app
-    ports:
+    # ports:
       # - "127.0.0.1:8087:8087" # Plus besoin avec Traefik
     labels:
       - "traefik.enable=true"
@@ -77,7 +77,7 @@ services:
       timeout: 30s
       retries: 5
       start_period: 30s
-    ports:
+    # ports:
       # - "127.0.0.1:8501:8501" # Plus besoin avec Traefik
     labels:
       - "traefik.enable=true"
