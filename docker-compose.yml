@@ -30,8 +30,6 @@ services:
     environment:
       - PYTHONUNBUFFERED=0
       - PYTHONPATH=/app
-    # ports:
-      # - "127.0.0.1:8087:8087" # Plus besoin avec Traefik
     labels:
       - "traefik.enable=true"
       # [NAMING] Utilisez des noms descriptifs pour les routers
