@@ -23,8 +23,6 @@ services:
       - letsencrypt:/letsencrypt
     labels:
       -"traefik.enable=true"
-    volumes:
-      letsencrypt:
  
   api:
     build: 
