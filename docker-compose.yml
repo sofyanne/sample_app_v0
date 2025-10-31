@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile
     deploy:
       mode: replicated
-      replicas: 1
+      replicas: 3
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8087/health"]
       interval: 30s
